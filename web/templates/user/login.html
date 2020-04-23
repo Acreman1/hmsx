@@ -1,0 +1,45 @@
+{% extends 'common/layout_user.html' %}
+
+{% block content %}
+<div class='container'>
+    <div class='row'>
+        <div class='col-md-6'>
+            <h2 class="font-bold">登陆图片</h2>
+            <div class="row">
+                <img src="{{ url_for('static',filename='images/tt3.jpg') }}" width="360px" height="400px" alt="">
+            </div>
+        </div>
+        <div class='col-md-6'>
+            <div class="ibox-content">
+                <div class="m-t login_wrap">
+                    <div class="form-group text-center">
+                        <h2 class="font-bold">登陆</h2>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputUsername">用户名</label>
+                        <input type="text" class="form-control" name="login_name" id="exampleInputEmail3" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputUsername">密码</label>
+                        <input type="password" class="form-control" name="login_pwd" id="exampleInputPassword3" placeholder="Password">
+                    </div>
+                    <button type="button" class="btn btn-primary block full-width m-b do-login">登陆</button>
+                </div>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-md-6' >
+                <a href="">powered by 猪猪</a>
+            </div>
+            <div class='col-md-6 text-right'>
+                <small>&copy; 2020 小可爱</small>
+            </div>
+        </div>
+    </div>
+    
+</div>
+{% endblock %}
+
+{% block js %}
+    <script src="{{ url_for('static',filename='js/user/login.js') }}"></script>
+{% endblock %}
