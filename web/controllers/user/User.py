@@ -1,7 +1,9 @@
-from flask import Blueprint,render_template,request,jsonify
+from flask import Blueprint,render_template,request,jsonify,make_response
 
 from common.models.User import User
 from common.libs.user.UserService import UserService
+from application import app
+import json
 
 router_user = Blueprint('user_page',__name__)
 
@@ -43,7 +45,14 @@ def login():
         resp["msg"] = "密码错误"
         return jsonify(resp)
 
-    return jsonify(resp)
+    # 讲用户信息存入到浏览器的Cookie中
+    # json.dumps()处理dict,list 类型，经过处理后可以直接在浏览器中使用
+    response = make_response(json.dumps({'code':200,'msg':'登录成功'}))
+    # name  value  过期时间
+    # value包括login_name  login_pwd  login_salt  uid
+    response.set_cookie(app.config['AUTH_COOKIE_NAME'],'%s@%s'%(UserService.generateAuthCode(user_info),user_info.uid),60*60*24*5)
+
+    return response
 
 @router_user.route("/logout")
 def logout():
