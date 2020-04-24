@@ -1,0 +1,2 @@
+DEBUG = False
+SERVER_PORT = 6666
