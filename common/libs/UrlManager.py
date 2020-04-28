@@ -11,7 +11,7 @@ class UrlManager(object):
     @staticmethod
     def buildStaticUrl(path):
         ver = "%s"%(int(time.time()))
-        path = "/static" + path + "?bersion=" + ver
+        path = "/static" + path + "?version=" + ver
         return UrlManager.builduUrl(path)
 
     @staticmethod

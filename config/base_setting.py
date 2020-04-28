@@ -7,3 +7,13 @@ SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 # cookie
 AUTH_COOKIE_NAME = "hmsx"
+
+
+# 拦截器忽略规则
+IGNORE_URLS = [
+    "^/user/login"
+]
+IGNORE_HCECK_LOGIN_URLS = [
+    "^/static",
+    "^/favicon.ico"
+]
