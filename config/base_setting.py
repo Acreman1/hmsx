@@ -17,3 +17,8 @@ IGNORE_HCECK_LOGIN_URLS = [
     "^/static",
     "^/favicon.ico"
 ]
+
+STATUS = {
+    "1":"正常",
+    "0":"以删除"
+}
