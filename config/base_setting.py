@@ -20,5 +20,5 @@ IGNORE_HCECK_LOGIN_URLS = [
 
 STATUS = {
     "1":"正常",
-    "0":"以删除"
+    "0":"已删除"
 }
